@@ -1,7 +1,7 @@
 <?php
 require "connect_db.php";
 
-function getUser($username, $password): ?array
+function GetUser($username, $password): ?array
 {
     global $conn;
 
@@ -13,7 +13,6 @@ function getUser($username, $password): ?array
     $stmt->execute();
     $user = $stmt->fetch(PDO::FETCH_ASSOC);
 
-    var_dump($user);
     if ($user === false) return null;
     return $user;
 }

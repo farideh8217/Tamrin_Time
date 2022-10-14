@@ -4,10 +4,14 @@ require "core.php";
 IsUser();
 
 if (isset($_POST["username"], $_POST["password"], $_POST["submit"])) {
-    $username = $_POST["username"];
-    $password = $_POST["password"];
+    $username = trim($_POST["username"]);
+    $password = trim($_POST["password"]);
 
-    $user = getUser($username, $password);
+    if ($username === "" || $password === "") {
+        echo "نام کاربری یا رمز عبور نباید خالی باشد";
+    }
+
+    $user = GetUser($username, $password);
 
     if ($user !== null) {
         $_SESSION["user"] = $user;

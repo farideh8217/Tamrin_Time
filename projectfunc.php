@@ -1,5 +1,5 @@
 <?php
-function getProjects(): ?array
+function GetProjects(): ?array
 {
     global $conn;
 

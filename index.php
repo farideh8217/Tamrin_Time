@@ -1,7 +1,9 @@
 <?php
 require "core.php";
 
-$projects = getProjects();
+NotIsUser();
+
+$projects = GetProjects();
 ?>
 
 <form action="product.php" method="GET">
@@ -10,5 +12,5 @@ $projects = getProjects();
             <option value="<?= $project_item["id"] ?>"><?= $project_item["name"] ?></option>
         <?php } ?>
     </select>
-    <input type="submit" name="submit">
+    <input type="submit">
 </form>

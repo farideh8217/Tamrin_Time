@@ -1,7 +1,11 @@
 <?php
+session_start();
+
 require "loginfunc.php";
 require "projectfunc.php";
 require "productfunc.php";
+require "activitesfunc.php";
+require "reportsfunc.php";
 
 function redirect($path)
 {
@@ -21,5 +25,14 @@ function IsUser()
 
     if ($isAuth === true) {
         redirect("index.php");
+    }
+}
+
+function NotIsUser()
+{
+    global $isAuth;
+
+    if ($isAuth !== true) {
+        redirect("login.php");
     }
 }
