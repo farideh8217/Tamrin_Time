@@ -7,13 +7,11 @@ if (isset($_POST["username"], $_POST["password"], $_POST["submit"])) {
     $username = trim($_POST["username"]);
     $password = trim($_POST["password"]);
 
-    if ($username === "" || $password === "") {
-        echo "نام کاربری یا رمز عبور نباید خالی باشد";
-    }
-
     $user = GetUser($username, $password);
 
-    if ($user !== null) {
+    if ($username === "" || $password === "") {
+        echo "نام کاربری یا رمز عبور نباید خالی باشد";
+    }elseif($user !== null) {
         $_SESSION["user"] = $user;
         redirect("index.php");
     } else {

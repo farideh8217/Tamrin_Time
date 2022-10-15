@@ -8,6 +8,7 @@ function GetProducts($project_id): ?array
     $stmt = $conn->prepare($sql);
     $stmt->bindParam(":project_id", $project_id);
     $stmt->execute();
+
     $products = $stmt->fetchAll(PDO::FETCH_ASSOC);
     return $products;
 }
@@ -20,8 +21,8 @@ function GetProject(int $project_id): ?array
     $stmt = $conn->prepare($sql);
     $stmt->bindParam(":project_id", $project_id);
     $stmt->execute();
-    $products = $stmt->fetch(PDO::FETCH_ASSOC);
 
+    $products = $stmt->fetch(PDO::FETCH_ASSOC);
     if ($products === false) return null;
     return $products;
 }
