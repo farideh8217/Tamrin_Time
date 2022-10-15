@@ -28,7 +28,7 @@ function IsUser()
     }
 }
 
-function NotIsUser()
+function NotIsUser():never
 {
     global $isAuth;
 

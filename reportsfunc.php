@@ -1,5 +1,4 @@
 <?php
-
 function GetReports(): ?array
 {
     global $conn;
@@ -24,7 +23,7 @@ function GetNameUserById($user_id): string
     $username = $stmt->fetchColumn();
     if ($username === false) return "کاربر ناشناس";
     elseif ($username === "") return "کاربر بدون نام";
-    return $username;
+    else return $username;
 }
 
 function GetNameProjectByID($project_id): string
@@ -39,7 +38,7 @@ function GetNameProjectByID($project_id): string
     $projectname = $stmt->fetchColumn();
     if ($projectname === false) return " پروژه ناشناس";
     elseif (trim($projectname) === "") return "پروژه بدون نام";
-    return $projectname;
+    else return $projectname;
 }
 
 function GetNameProductByID($product_id): string
@@ -54,7 +53,7 @@ function GetNameProductByID($product_id): string
     $productname = $stmt->fetchColumn();
     if ($productname === false) return " محصول ناشناس";
     elseif (trim($productname) === "") return "محصول بدون نام";
-    return $productname;
+    else return $productname;
 }
 
 function GetNameActivityByID($activity_id): string
@@ -69,5 +68,5 @@ function GetNameActivityByID($activity_id): string
     $activityname = $stmt->fetchColumn();
     if ($activityname === false) return " فعالیت ناشناس";
     elseif (trim($activityname) === "") return "فعالیت بدون نام";
-    return $activityname;
+    else return $activityname;
 }

@@ -10,9 +10,7 @@ if (!isset($_GET["project_id"])) {
 $project_id = $_GET["project_id"];
 
 $project = GgetProject($project_id);
-if ($project === null) {
-    redirect("index.php");
-}
+if ($project === null) redirect("index.php");
 
 $products = GetProducts($project_id);
 ?>
